@@ -14,6 +14,9 @@ class RandomMealViewModel: ViewModel() {
     // Referenz auf die LiveData aus dem Repository
     val randomMeal = repository.randomMeal
 
+    // Referenz auf die LiveData aus dem Repository
+    val categories = repository.categories
+
     // Init funktion um direkt beim Starten der App Daten zu laden
     init {
         loadRandomMeal()
@@ -23,6 +26,13 @@ class RandomMealViewModel: ViewModel() {
     fun loadRandomMeal() {
         viewModelScope.launch {
             repository.getRandomMeal()
+        }
+    }
+
+    // Funktion um Categories in Coroutine zu laden
+    fun loadCategories() {
+        viewModelScope.launch {
+            repository.getCategories()
         }
     }
 

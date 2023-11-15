@@ -2,6 +2,7 @@ package com.syntax_institut.android_vl_api.data.remote
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.syntax_institut.android_vl_api.data.model.CategoryResult
 import com.syntax_institut.android_vl_api.data.model.MealResult
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -31,6 +32,10 @@ interface MealApiService {
     @GET("random.php")
     // Es wird eine Funktion angelegt, die einen Namen hat und zeigt, was später zurückgegeben wird
     suspend fun getRandomMeal(): MealResult
+
+    // Neuer Endpunkt für die Api, dieser lädt alle Categories
+    @GET("categories.php")
+    suspend fun getCategories(): CategoryResult
 
 }
 

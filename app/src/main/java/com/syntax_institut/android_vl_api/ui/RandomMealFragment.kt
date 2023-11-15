@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import coil.load
 import com.syntax_institut.android_vl_api.databinding.FragmentRandomMealBinding
 
 class RandomMealFragment: Fragment() {
@@ -30,6 +31,7 @@ class RandomMealFragment: Fragment() {
             binding.tvMealTitle.text = it.strMeal
             binding.tvCountry.text = it.strArea
             binding.tvCategory.text = it.strCategory
+            binding.ivRandomMealImage.load(it.image)
         }
 
         // Button um nächstes Meal zu laden

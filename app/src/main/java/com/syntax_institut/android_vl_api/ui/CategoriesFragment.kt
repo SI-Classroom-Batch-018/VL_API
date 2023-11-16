@@ -30,7 +30,11 @@ class CategoriesFragment: Fragment() {
         // Oberserver auf die Category-Live-Data-Liste
         // Wenn etwas in Liste: Adapter wird erstellt
         viewModel.categories.observe(viewLifecycleOwner) {
-            binding.rvCategories.adapter = CategoryAdapter(it)
+            binding.rvCategories.adapter = CategoryAdapter(it, viewModel)
+        }
+
+        binding.btNew.setOnClickListener {
+            viewModel.addNewCategory()
         }
 
     }

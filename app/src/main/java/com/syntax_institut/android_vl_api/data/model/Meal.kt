@@ -6,8 +6,8 @@ import com.squareup.moshi.Json
 data class Meal (
     val idMeal: Int,
     val strMeal: String,
-    val strCategory: String,
-    val strArea: String,
+    val strCategory: String = "",
+    val strArea: String = "",
 
     @Json(name = "strMealThumb")
     val image: String

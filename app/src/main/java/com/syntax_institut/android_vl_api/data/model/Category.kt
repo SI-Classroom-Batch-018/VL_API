@@ -11,6 +11,4 @@ data class Category(
     @Json(name = "strCategoryThumb")
     val image: String,
 
-    // Wenn wir Felder benötigen, die es nicht in der API-Response gibt müssen wir einen Standardwert angeben
-    var notes: List<String> = mutableListOf()
 )

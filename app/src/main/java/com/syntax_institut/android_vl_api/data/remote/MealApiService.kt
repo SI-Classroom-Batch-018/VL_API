@@ -7,6 +7,7 @@ import com.syntax_institut.android_vl_api.data.model.MealResult
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 // Die Base-URL wird angelegt
 const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
@@ -36,6 +37,13 @@ interface MealApiService {
     // Neuer Endpunkt für die Api, dieser lädt alle Categories
     @GET("categories.php")
     suspend fun getCategories(): CategoryResult
+
+    // Funktion um mit Hilfe eines Query Paramters bestimmte Daten vom Server zu laden
+    // Dafür bekommt die Funktion die gesuchte Kategorie übergeben
+    // Beispiel: Aufruf der Funktion mit Paramter "Seafood" ergibt:
+    // www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+    @GET("filter.php")
+    suspend fun getMealsByCategory(@Query("c") category: String): MealResult
 
 }
 

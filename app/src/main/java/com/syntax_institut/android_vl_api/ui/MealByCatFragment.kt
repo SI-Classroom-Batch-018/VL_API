@@ -27,10 +27,6 @@ class MealByCatFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observer um die LiveData zu besorgen
-        viewModel.mealsByCategory.observe(viewLifecycleOwner) {
-            binding.rvMealsByCat.adapter = MealByCategoryAdapter(it)
-        }
 
     }
 

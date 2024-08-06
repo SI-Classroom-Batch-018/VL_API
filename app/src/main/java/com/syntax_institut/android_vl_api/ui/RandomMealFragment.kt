@@ -26,18 +26,6 @@ class RandomMealFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Oberver um LiveData zu beobachten
-        viewModel.randomMeal.observe(viewLifecycleOwner) {
-            binding.tvMealTitle.text = it.strMeal
-            binding.tvCountry.text = it.strArea
-            binding.tvCategory.text = it.strCategory
-            binding.ivRandomMealImage.load(it.image)
-        }
-
-        // Button um nächstes Meal zu laden
-        binding.btNext.setOnClickListener {
-            viewModel.loadRandomMeal()
-        }
 
     }
 

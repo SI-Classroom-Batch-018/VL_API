@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.syntax_institut.android_vl_api.data.model.Meal
 import com.syntax_institut.android_vl_api.databinding.ItemMealBinding
 
 class MealByCategoryAdapter(
-    private val dataset: List<Meal>
+    private val dataset: List<Int>
 ): RecyclerView.Adapter<MealByCategoryAdapter.MealByCatViewHolder>() {
 
     inner class MealByCatViewHolder(val binding: ItemMealBinding): RecyclerView.ViewHolder(binding.root)
@@ -25,8 +24,6 @@ class MealByCategoryAdapter(
     override fun onBindViewHolder(holder: MealByCatViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.binding.tvMealByCatName.text = item.strMeal
-        holder.binding.ivMealByCat.load(item.image)
     }
 
 }

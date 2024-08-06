@@ -20,22 +20,12 @@ class CategoriesFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCategoriesBinding.inflate(layoutInflater)
-        viewModel.loadCategories()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Oberserver auf die Category-Live-Data-Liste
-        // Wenn etwas in Liste: Adapter wird erstellt
-        viewModel.categories.observe(viewLifecycleOwner) {
-            binding.rvCategories.adapter = CategoryAdapter(it, viewModel)
-        }
-
-        binding.btNew.setOnClickListener {
-            viewModel.addNewCategory()
-        }
 
     }
 

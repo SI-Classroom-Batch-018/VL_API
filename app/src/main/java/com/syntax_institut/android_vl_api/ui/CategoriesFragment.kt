@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.syntax_institut.android_vl_api.adapter.CategoryAdapter
+import com.syntax_institut.android_vl_api.data.model.Category
 import com.syntax_institut.android_vl_api.databinding.FragmentCategoriesBinding
 
 class CategoriesFragment: Fragment() {
@@ -26,7 +27,9 @@ class CategoriesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        viewModel.categories.observe(viewLifecycleOwner) {
+            binding.rvCategories.adapter = CategoryAdapter(it, viewModel)
+        }
     }
 
 }

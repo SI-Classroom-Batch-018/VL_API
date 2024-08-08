@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/randomMealFragment">
 
@@ -13,7 +14,8 @@
         android:name="com.syntax_institut.android_vl_api.ui.CategoriesFragment"
         android:label="CategoriesFragment" />
     <fragment
-        android:id="@+id/mealByCatFragment"
-        android:name="com.syntax_institut.android_vl_api.ui.MealByCatFragment"
-        android:label="MealByCatFragment" />
+        android:id="@+id/mealsByCategoryFragment"
+        android:name="com.syntax_institut.android_vl_api.ui.MealsByCategoryFragment"
+        android:label="fragment_meals_by_category"
+        tools:layout="@layout/fragment_meals_by_category" />
 </navigation>

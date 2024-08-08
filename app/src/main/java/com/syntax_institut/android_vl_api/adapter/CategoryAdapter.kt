@@ -33,7 +33,8 @@ class CategoryAdapter(
         holder.binding.ivCategoryImage.load(item.image)
 
         holder.binding.root.setOnClickListener {
-
+            viewModel.filterMealsByCategory(item.strCategory)
+            holder.itemView.findNavController().navigate(R.id.mealsByCategoryFragment)
         }
     }
 }

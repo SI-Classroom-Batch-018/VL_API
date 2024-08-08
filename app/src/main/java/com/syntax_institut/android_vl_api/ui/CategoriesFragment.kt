@@ -31,5 +31,4 @@ class CategoriesFragment: Fragment() {
             binding.rvCategories.adapter = CategoryAdapter(it, viewModel)
         }
     }
-
 }

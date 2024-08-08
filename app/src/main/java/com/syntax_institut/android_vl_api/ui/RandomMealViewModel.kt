@@ -13,6 +13,7 @@ class RandomMealViewModel: ViewModel() {
 
     val randomMeal = repository.randomMeal
     val categories = repository.categories
+    val filteredMealsByCategory = repository.mealsByCategory
 
     init {
         loadRandomMeal()
@@ -31,4 +32,9 @@ class RandomMealViewModel: ViewModel() {
         }
     }
 
+    fun filterMealsByCategory(category: String) {
+        viewModelScope.launch {
+            repository.filterMealsByCategory(category)
+        }
+    }
 }

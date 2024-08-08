@@ -31,6 +31,9 @@ class CategoryAdapter(
 
         holder.binding.tvCategoryText.text = item.strCategory
         holder.binding.ivCategoryImage.load(item.image)
-    }
 
+        holder.binding.root.setOnClickListener {
+
+        }
+    }
 }
